@@ -1,0 +1,112 @@
+/*
+** String.c for string in /home/daguen_s/rendu/piscine_cpp_d03/ex00
+**
+** Made by daguen_s
+** Login   <daguen_s@epitech.net>
+**
+** Started on  Fri Jan 10 05:59:54 2014 daguen_s
+** Last update Fri Jan 10 08:05:31 2014 daguen_s
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "String.h"
+
+static void assign_s (String *this, String const * str);
+static void assign_c (String *this, char const * s );
+static void append_s(String* this, String const* ap);
+static void append_c(String* this, char const* ap);
+
+void StringInit(String* this, char const * s)
+{
+  while (this == NULL)
+    this = malloc(sizeof(String));
+  if (s == NULL)
+    this->str = NULL;
+  else
+    this->str = strdup(s);
+  this->assign_s = &assign_s;
+  this->assign_c = &assign_c;
+  this->append_s = &append_s;
+  this->append_c = &append_c;
+}
+
+void StringDestroy(String* this)
+{
+  if (this != NULL && this->str != NULL)
+    {
+      if (this->str != NULL)
+	free(this->str);
+      this->str = NULL;
+    }
+}
+
+static void assign_s (String *this, String const * str)
+{
+  if (this != NULL && str != NULL)
+    {
+      free(this->str);
+      if (str->str != NULL)
+	this->str = strdup(str->str);
+      else
+	this->str = NULL;
+    }
+}
+
+static void assign_c (String *this, char const * s )
+{
+  if (this != NULL)
+    {
+      if (s != NULL)
+	this->str = strdup(s);
+      else
+	this->str = NULL;
+    }
+}
+
+static void append_s(String* this, String const* ap)
+{
+  char *new_str;
+  int lenght = 1;
+
+  if (this != NULL && ap != NULL)
+    {
+      if (ap->str != NULL)
+	{
+	  if (this->str != NULL)
+	    lenght += strlen(this->str);
+	  lenght += strlen(ap->str);
+	  new_str = malloc(lenght * sizeof(char));
+	  new_str[0] = '\0';
+	  if (this->str != NULL)
+	    strcat(new_str, this->str);
+	  strcat(new_str, ap->str);
+	  free(this->str);
+	  this->str = new_str;
+	}
+    }
+}
+
+static void append_c(String* this, char const* ap)
+{
+  char *new_str;
+  int lenght = 1;
+
+  if (this != NULL)
+    {
+      if (ap != NULL)
+	{
+	  if (this->str != NULL)
+	    lenght += strlen(this->str);
+	  lenght += strlen(ap);
+	  new_str = malloc(lenght * sizeof(char));
+	  new_str[0] = '\0';
+	  if (this->str != NULL)
+	    strcat(new_str, this->str);
+	  strcat(new_str, ap);
+	  free(this->str);
+	  this->str = new_str;
+	}
+    }
+}
