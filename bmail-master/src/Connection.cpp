@@ -1,14 +1,3 @@
-//
-// Connection.cpp for connect in /home/dell-a_f//projets/suicide/src
-// 
-// Made by florian dell-aiera
-// Login   <dell-a_f@epitech.net>
-// 
-// Started on  Sun Mar 10 11:23:30 2013 florian dell-aiera
-// Last update Sun Mar 10 11:32:14 2013 florian dell-aiera
-//
-
-
 #include	"../headers/Core.hh"
 
 Core::Connection::Connection()

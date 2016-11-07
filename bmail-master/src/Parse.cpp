@@ -1,14 +1,3 @@
-//
-// Parse.cpp for parse in /home/dell-a_f//projets/suicide
-// 
-// Made by florian dell-aiera
-// Login   <dell-a_f@epitech.net>
-// 
-// Started on  Sun Mar 10 10:58:44 2013 florian dell-aiera
-// Last update Sun Mar 10 13:30:46 2013 florian dell-aiera
-//
-
-
 #include	"../headers/Core.hh"
 
 Core::Parse::Parse()
