@@ -1,0 +1,30 @@
+/*
+** Fruit.h for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+**
+** Made by bertrand boyer
+** Login   <boyer_b@epitech.net>
+**
+** Started on  Tue Jan 17 09:53:28 2012 bertrand boyer
+** Last update Tue Jan 17 11:44:55 2012 bertrand boyer
+*/
+
+#ifndef __FRUIT_H__
+#define __FRUIT_H__
+
+#include <string>
+
+class		Fruit
+{
+ protected:
+  std::string	_name;
+  int		_vitamins;
+
+ public:
+  Fruit();
+  ~Fruit();
+
+  virtual std::string		getName() const = 0;
+  int				getVitamins() const;
+};
+
+#endif

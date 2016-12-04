@@ -1,0 +1,28 @@
+//
+// Banana.cpp for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+//
+// Made by bertrand boyer
+// Login   <boyer_b@epitech.net>
+//
+// Started on  Tue Jan 17 11:27:30 2012 bertrand boyer
+// Last update Tue Jan 17 11:44:18 2012 bertrand boyer
+//
+
+#include <string>
+
+#include "Banana.h"
+
+Banana::Banana() : Fruit()
+{
+  this->_name = "banana";
+  this->_vitamins = 5;
+}
+
+Banana::~Banana()
+{
+}
+
+std::string	Banana::getName() const
+{
+  return (this->_name);
+}

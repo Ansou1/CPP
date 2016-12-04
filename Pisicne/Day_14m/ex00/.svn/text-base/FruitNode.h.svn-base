@@ -1,0 +1,22 @@
+/*
+** FruitNode.h for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+**
+** Made by bertrand boyer
+** Login   <boyer_b@epitech.net>
+**
+** Started on  Tue Jan 17 12:10:17 2012 bertrand boyer
+** Last update Tue Jan 17 15:00:03 2012 bertrand boyer
+*/
+
+#ifndef __FRUITNODE_H__
+#define __FRUITNODE_H__
+
+#include "Fruit.h"
+
+typedef struct		FruitNode
+{
+  Fruit		*f;
+  FruitNode	*next;
+} FruitNode;
+
+#endif

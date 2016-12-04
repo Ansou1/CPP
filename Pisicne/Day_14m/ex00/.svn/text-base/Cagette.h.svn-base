@@ -1,0 +1,38 @@
+/*
+** Cagette.h for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+**
+** Made by bertrand boyer
+** Login   <boyer_b@epitech.net>
+**
+** Started on  Tue Jan 17 11:48:57 2012 bertrand boyer
+** Last update Tue Jan 17 16:00:13 2012 bertrand boyer
+*/
+
+#ifndef __CAGETTE_H__
+#define __CAGETTE_H__
+
+#include "Fruit.h"
+#include "FruitNode.h"
+
+class		Cagette
+{
+ private:
+  int		size;
+  int		nbFruit;
+  FruitNode	*head_node;
+
+ public:
+  Cagette(int size);
+  ~Cagette();
+
+  int		getSize() const;
+  int		nbFruits() const;
+
+  void		setHead(FruitNode *h);
+
+  bool		putFruit(Fruit* f);
+  Fruit*	pickFruit();
+  FruitNode*	head() const;
+};
+
+#endif

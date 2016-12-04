@@ -1,0 +1,87 @@
+//
+// Cagette.cpp for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+//
+// Made by bertrand boyer
+// Login   <boyer_b@epitech.net>
+//
+// Started on  Tue Jan 17 12:03:46 2012 bertrand boyer
+// Last update Tue Jan 17 17:08:52 2012 bertrand boyer
+//
+
+#include "FruitNode.h"
+#include "Cagette.h"
+
+Cagette::Cagette(int size)
+{
+  if (size < 0)
+    size = 0;
+  this->size = size;
+  this->nbFruit = 0;
+  this->head_node = NULL;
+}
+
+Cagette::~Cagette()
+{
+}
+
+int		Cagette::getSize() const
+{
+  return (this->size);
+}
+
+int		Cagette::nbFruits() const
+{
+  return (this->nbFruit);
+}
+
+void		Cagette::setHead(FruitNode *h)
+{
+  this->head_node = h;
+}
+
+bool		Cagette::putFruit(Fruit* f)
+{
+  FruitNode	*newFruitNode;
+  FruitNode	*tmp;
+
+  if (f != NULL && this->nbFruit < this->size)
+    {
+      newFruitNode = new FruitNode;
+      newFruitNode->f = f;
+      newFruitNode->next = NULL;
+      if (this->nbFruit == 0)
+	this->head_node = newFruitNode;
+      else
+	{
+	  tmp = this->head_node;
+	  while (tmp->next != NULL)
+	    tmp = tmp->next;
+	  tmp->next = newFruitNode;
+	}
+      this->nbFruit = this->nbFruit + 1;
+      return (true);
+    }
+  return (false);
+}
+
+Fruit*		Cagette::pickFruit()
+{
+  Fruit		*f;
+
+  if (this->nbFruit > 0 && this->head_node != NULL)
+    {
+      f = (this->head_node)->f;
+      this->setHead((this->head_node)->next);
+      this->nbFruit = this->nbFruit - 1;
+      return (f);
+    }
+  return (NULL);
+}
+
+FruitNode*	Cagette::head() const
+{
+  if (this->nbFruit > 0)
+    return (this->head_node);
+  else
+    return (NULL);
+}

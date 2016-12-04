@@ -1,0 +1,28 @@
+//
+// Citron.cpp for ex00 in /home/boyer_b//Documents/Epitech/piscineCPP/piscine_cpp_d14m-2015-boyer_b/ex00
+//
+// Made by bertrand boyer
+// Login   <boyer_b@epitech.net>
+//
+// Started on  Tue Jan 17 10:55:31 2012 bertrand boyer
+// Last update Tue Jan 17 11:44:25 2012 bertrand boyer
+//
+
+#include <string>
+
+#include "Citron.h"
+
+Citron::Citron() : Fruit()
+{
+  this->_name = "citron";
+  this->_vitamins = 3;
+}
+
+Citron::~Citron()
+{
+}
+
+std::string	Citron::getName() const
+{
+  return (this->_name);
+}
